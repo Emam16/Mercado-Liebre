@@ -18,6 +18,9 @@ p{
 }
 
 div.top-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     padding: 5%;
 }
 
@@ -26,7 +29,14 @@ header{
 }
 
 header div.logo{
-    width: 50%;
+    width: 40%;
+}
+
+header .form{
+    width: 30%;
+}
+
+header div.logo{
     padding: 10px;
 }
 
@@ -35,6 +45,7 @@ header div.logo{
 }*/
 
 header nav{
+    margin-left: 20px;
     font-size: 12px;
 }
 
@@ -47,11 +58,19 @@ header ul li a{
     color: #000;
 }
 
+header .form {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-size: 11px;
+}
+
 header .form .input{
     background-color: #FFF;
     border: 1px solid #000;
     outline: none;
     color: #666;
+    width: 95%;
     padding: 2px;
 }
 
@@ -60,14 +79,33 @@ header .form .submit{
     background-color: #FFF;
     border: 1px solid #000;
     color: #666;
-    width: 100%;
+    margin-left: 5px;
+    width: 10%;
+    height: 19px;
     text-align: center;
 }
 
 header div.top-header p{
-    width: 100%;
+    width: 30%;
     text-align: center;
-    margin-top: 10px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav ul {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 5px;
 }
 
 div.burger-menu{
@@ -85,15 +123,23 @@ div.burger-menu i{
 
 article div.main-article{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    padding: 15px;
 }
 
 .price{
     font-size:18px;
+    width:30%;
 }
 
 .discount{
     font-size:16px;
     font-weight: normal;
+    width:70%;
 }
 
 .description{
@@ -111,10 +157,12 @@ section.banner img{
 
 main{
     width: 90%;
+    margin:0 auto;
 }
 
 main section article{
     background-color: #fff;
+    margin: 10px 0px;
 }
 
 main section article img{
@@ -124,20 +172,284 @@ main section article img{
 main section article i,
 .discount{
     color: #39b54a;
+}
 
+main section article i {
+display: block;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #39b54a;
+    width: 30px;
+    height: 30px;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
 }
 
 footer{
     text-align: center;
     background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Copyright{
+    background-color:#fff;
     text-align: left;
+    bottom: -775px;
+    flex-direction: column;
+    position: absolute;
 }
 
-footer div i{
+/*footer div i{
     color:#0044AA;
     font-size: 2em;
     padding: 10px;
+}
+
+footer section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}*/
+
+@media (max-width: 361px){
+    main section article .description{
+        display: none;
+    }
+    article:hover .description {
+        display:block;
+    }
+
+    main.section-article:hover .description {
+        transition: transform 5s;
+    }
+}
+
+@media (max-width: 440px){
+    body nav {
+        display:none;
+    }
+
+    header div.logo{
+        width: 100%;
+    }
+    
+    header .form{
+        width: 100%;
+    }
+
+    header div.top-header p{
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    div.top-header{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5%;
+    }
+}
+
+@media (min-width: 440px){
+    div.burger-menu i{
+        display:none;
+    }
+
+    main.section-article:hover {
+        box-shadow: 0px, 0px, 10px rgb(100, 100, 100);
+    }
+
+    main.section-article:hover .description {
+        transition: transform 5s;
+    }
+
+    main section div.products article:hover i {
+        transform: rotate(-90deg);
+    }
+
+    article:hover .description {
+        display:block;
+    }
+
+    main section div.products article i {
+        transition: transform 1s;
+    }
+
+    main section div.products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    main section div.products article{
+        width: 45%;
+    }
+
+    .price,
+    .discount{
+        width: 50%;
+    }
+
+    footer div i{
+        color:#0044AA;
+        font-size: 2em;
+        padding: 10px;
+    }
+    
+    footer section {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+/* Mobile */
+
+/*@media (max-width: 361px){
+    body nav {
+        display:none;
+    }
+
+    header div.logo{
+        width: 100%;
+    }
+    
+    header .form{
+        width: 100%;
+    }
+
+    header div.top-header p{
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    div.top-header{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5%;
+    }
+}
+
+@media (min-width: 361px){
+    div.burger-menu i{
+        display:none;
+    }
+
+    main section article .description{
+        display: none;
+    }
+    
+    main.section-article:hover {
+        box-shadow: 0px, 0px, 10px rgb(100, 100, 100);
+    }
+
+    article:hover .description {
+        display:block;
+    }
+
+    main.section-article:hover .description {
+        transition: transform 5s;
+    }
+
+    main section div.products article:hover i {
+        transform: rotate(-90deg);
+    }
+    main section div.products article i {
+        transition: transform 1s;
+    }
+
+    main section div.products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    main section div.products article{
+        width: 45%;
+    }
+
+    .price,
+    .discount{
+        width: 50%;
+    }
+}*/
+
+/*Other*/
+
+@media (max-width: 500px){
+
+    header div.logo{
+        height: 20%;
+    }
+
+    header .form .submit{
+        background-position: center, center;
+        background-color: #FFF;
+        border: 1px solid #000;
+        color: #666;
+        margin-left: 5px;
+        width: 10%;
+        height: 32px;
+        text-align: center;
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width: 714px){
+
+    header div.logo{
+        width: 100%;
+    }
+    
+    header .form{
+        width: 100%;
+    }
+
+    header div.top-header p{
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    div.top-header{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5%;
+    }
+
+    header .form .submit{
+        background-position: center, center;
+        background-color: #FFF;
+        border: 1px solid #000;
+        color: #666;
+        margin-left: 5px;
+        width: 10%;
+        height: 19px;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 769px){
+    main section div.products article{
+        width: 22%;
+    }
 }
