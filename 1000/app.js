@@ -15,6 +15,8 @@ app.use(express.static("Public"));
 //res.sendFile(htmlPath)
 //});
 
+app.listen (1000, ()=>console.log ("Servidor en puerto 1000"))
+
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
@@ -30,8 +32,6 @@ app.get('/login', (req,res)=>{
 app.get('/404', (req,res)=>{
     res.send("Error pagina no encontrada", 404);
 });
-
-app.listen (1000, ()=>console.log ("Servidor en puerto 1000"))
 
 //res.sendFile ("./views/index.html"))
 
