@@ -1,14 +1,21 @@
 const express = require ("express");
 
-//const path = require ("path");
+const path = require ("path");
 
 const app = express ();
+
+const routersMain = require ('./routers/main')
+
+const routersProducts = require ('./routers/products')
 
 //const publicPath =path.resolve(__dirname, "./public")
 
 app.use(express.static("Public"));
 
 //app.use(express.static(publicPath));
+
+//** EJS */
+app.set('view engine', 'ejs');
 
 //app.get ("/", (req,res)=> {
 //let htmlPath = path.resolve (__dirname, "./views/index.html");
@@ -17,17 +24,9 @@ app.use(express.static("Public"));
 
 app.listen (1000, ()=>console.log ("Servidor en puerto 1000"))
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
+app.use('/', routersMain);
 
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
-});
-
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+app.use('/products', routersProducts)
 
 app.get('/404', (req,res)=>{
     res.send("Error pagina no encontrada", 404);

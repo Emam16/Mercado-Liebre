@@ -4,6 +4,18 @@
     box-sizing:border-box;
 }
 
+/*COMENTAR*/
+
+.par{
+    border: 1px red solid
+}
+
+.impar{
+    border: 1px blue solid
+}
+
+/*COMENTAR*/
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #ebebeb;
